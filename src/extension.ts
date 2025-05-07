@@ -32,7 +32,8 @@ export function activate(context: vscode.ExtensionContext) {
                 return;
             }
     
-            const escapedSelection = selection.replace(/(["\\])/g, '\\$1');
+            // Escape the selection to handle special characters
+            const escapedSelection = selection.replace(/(["\\])/g, '\\$1').replace(/\n/g, '\\n');
             runPythonScript('suggest', ['--code', escapedSelection], (output) => {
                 if (output.toLowerCase().includes('error')) {
                     outputChannel.appendLine(`Error: ${output}`);

@@ -7,8 +7,11 @@
     "vscode": "^1.99.0"
   },
   "categories": [
-    "Other"
-  ],
+    "Programming Languages", "AI"
+  ],"repository": {
+    "type": "git",
+    "url": "https://github.com/ShreyanshShakya/personal-coding-assistant.git"
+  },
   "publisher": "ShreyanshShakya",
   "activationEvents": ["*"],
   "main": "./dist/extension.js",

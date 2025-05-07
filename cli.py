@@ -7,8 +7,6 @@ from learning_mode import provide_tips
 
 
 def main():
-    import argparse
-
     parser = argparse.ArgumentParser(description="AI-Powered Coding Assistant")
     parser.add_argument(
         "feature",
@@ -33,10 +31,10 @@ def main():
     if args.feature == "suggest":
         if args.code:
             try:
-                suggestion = suggest_code(args.code)
-                print(suggestion)
+                result = suggest_code(args.code)
+                print(result)
             except Exception as e:
-                print(f"Error: Failed to generate code suggestion. {str(e)}")
+                print(f"Error: Failed to generate suggestion. {str(e)}")
         else:
             print("Error: No code provided for suggestion.")
 
